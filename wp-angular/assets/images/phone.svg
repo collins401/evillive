@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="图层_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18px" height="18px"
+	 viewBox="0 0 18 18" enable-background="new 0 0 18 18" xml:space="preserve">
+<title>phone-in-talk</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1" sketch:type="MSPage">
+	<g id="Icons-Notifications" transform="translate(-87.000000, -86.000000)" sketch:type="MSLayerGroup">
+		<g id="phone-in-talk" transform="translate(87.000000, 86.000000)" sketch:type="MSShapeGroup">
+			<path id="Shape" fill="#FFFFFF" d="M17,12.5c-1.2,0-2.4-0.2-3.6-0.6c-0.301-0.101-0.7,0-1,0.199l-2.2,2.2
+				C7.4,12.9,5.1,10.5,3.6,7.7l2.2-2.2c0.3-0.3,0.4-0.7,0.2-1C5.7,3.4,5.5,2.2,5.5,1c0-0.6-0.4-1-1-1H1C0.4,0,0,0.4,0,1
+				c0,9.4,7.6,17,17,17c0.6,0,1-0.4,1-1v-3.5C18,12.9,17.6,12.5,17,12.5L17,12.5z M16,9h2c0-5-4-9-9-9v2C12.9,2,16,5.1,16,9L16,9z
+				 M12,9h2c0-2.8-2.2-5-5-5v2C10.7,6,12,7.3,12,9L12,9z"/>
+		</g>
+	</g>
+</g>
+</svg>

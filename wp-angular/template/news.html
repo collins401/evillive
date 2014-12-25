@@ -1,0 +1,8 @@
+<ul class="news-list" directive-when-scrolleds="loadMore()">
+    <li ng-repeat="post in posts">
+        <a href="#/news/detail/{{ post.id }}.html">
+            <h3 class="article-h2">{{ post.title }}</h3>
+        </a>
+    </li>
+</ul>
+<div class="nextPge" ng-show="nextPage"><span class="loading-page"></span></div>

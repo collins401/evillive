@@ -1,0 +1,16 @@
+<div class="box">
+    <h1 class="article-title" ng-bind="item.title"></h1>
+    <div class="meta">发布时间：<span ng-bind="item.date"></span>　
+    </div>
+    <div class="entry-article">
+        <ul class="param">
+            <li><label for="">招聘人数：</label>{{item.custom_fields.job_num[0]}}</li>
+            <li><label for="">学历要求：</label>{{item.custom_fields.edu_rating[0]}}</li>
+            <li><label for="">工作年限：</label>{{item.custom_fields.job_age[0]}}</li>
+
+
+
+        </ul>
+        <div ng-bind-html="item.content | html"></div>
+    </div>
+</div>

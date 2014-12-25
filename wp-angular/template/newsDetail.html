@@ -1,0 +1,9 @@
+<div class="box">
+    <h1 class="article-title" ng-bind="item.title"></h1>
+    <div class="meta">时间：<span ng-bind="item.date"></span>　
+        分类： <a href="#/news/{{item.categories[0].slug}}"><span ng-bind="item.categories[0].title"></span></a>
+    </div>
+    <div class="entry-article">
+        <div ng-bind-html="item.content | html"></div>
+    </div>
+</div>

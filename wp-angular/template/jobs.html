@@ -1,0 +1,11 @@
+<div class="page-banner">
+    <img src="assets/images/job.jpg" alt=""/>
+</div>
+<ul class="job-list" directive-when-scrolleds="loadMore()">
+    <li ng-repeat="post in posts">
+        <a href="#/jobs/{{ post.id }}.html">
+            <h3>{{ post.title }} <span class="num">({{post.custom_fields.job_num[0]}}人)</span></h3>
+        </a>
+    </li>
+</ul>
+<div class="nextPge" ng-show="nextPage"><span class="loading-page"></span></div>

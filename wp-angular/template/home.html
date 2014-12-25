@@ -1,0 +1,37 @@
+<div class="banner">
+
+    <img src="assets/images/banner1.jpg" alt=""/>
+</div>
+<ul class="tabs">
+    <li ng-click="tabs('1')"  ng-class="{active: 'active1' == moveActive}">服务项目</li>
+    <li ng-click="tabs('2')"  ng-class="{active: 'active2' == moveActive}">公司新闻</li>
+    <li ng-click="tabs('3')"  ng-class="{active: 'active3' == moveActive}">企业简介</li>
+</ul>
+<div class="tabs-content">
+    <div class="tabs-box" ng-class="{active1: 'active1' == moveActive,active2: 'active2' == moveActive,active3: 'active3' == moveActive}">
+
+        <div class="tabs-list">
+            <ul class="page-list">
+                <li ng-repeat="item in pages"><a href="#/about/{{item.id}}"><span class="thumb"><img src="assets/images/{{item.pic}}" alt=""/></span>{{item.name}}</a></li>
+            </ul>
+        </div>
+
+        <div class="tabs-list">
+            <ul class="news-list">
+                <li ng-repeat="post in posts">
+                    <a href="#/news/detail/{{ post.id }}.html">
+                        <h3 class="article-h2">{{ post.title }}</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tabs-list">
+            内容待完善...
+        </div>
+    </div>
+</div>
+
+
+
+
+
