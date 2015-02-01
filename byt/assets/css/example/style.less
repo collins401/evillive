@@ -1,0 +1,26 @@
+@import "../src/all.less";
+
+@default-font-size: 14;
+@support-old-ie:true;
+@support-html5: true;
+
+@default-text-color: #444;
+@default-input-placeholder-color: #999;
+//font
+@default-base-font-family: 'Helvetica Neue', Arial, sans-serif;
+@default-heading-font-family:'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Hiragino Sans GB W3', 'Microsoft Yahei', sans-serif;
+// global scope
+.global-normalize();
+
+table {
+    .reset-table();
+}
+.clearfix{
+    .clearfix();
+}
+body{
+    font: normal 14px/1.5 @default-base-font-family;
+}
+h1,h2,h3,h4{
+    font-family:@default-heading-font-family;
+}

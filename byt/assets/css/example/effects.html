@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Effects - EST</title>
+    <link href="prettify/prettify.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="prettify/prettify.js"></script>
+<!--     <link rel="stylesheet/less" href="example.less" />
+    <link rel="stylesheet/less" href="effects.less" />
+ -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="effects.css" />
+    
+</head>
+<body>
+    <h1>Effectssss</h1>
+    <table class="ui table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Registration Date</th>
+            <th>E-mail address</th>
+            <th>Premium Plan</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>John Lilki</td>
+            <td>September 14, 2013</td>
+            <td>jhlilk22@yahoo.com</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Jamie Harington</td>
+            <td>January 11, 2014</td>
+            <td>jamieharingonton@yahoo.com</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Jill Lewis</td>
+            <td>May 11, 2014</td>
+            <td>jilsewris22@yahoo.com</td>
+            <td>Yes</td>
+        </tr>
+        </tbody>
+    </table>
+    <h2>Embossed text</h2>
+    <ul>
+        <li>1212</li>
+        <li>asd</li>
+        <li>asdasd</li>
+    </ul>
+    <ol class="clearfix">
+        <li>1212</li>
+        <li>asd</li>
+        <li>asdasd</li>
+    </ol>
+    <h1>标题一</h1>
+    <h2>标题二</h2>
+    <h3>标题三</h3>
+    <h4>标题四</h4>
+    <p class="desc">文本浮凸效果</p>
+    <pre class="code prettyprint">&lt;div class="est-embossed"&gt;浮凸文本&lt;/div&gt;
+&lt;div class="est-blind-embossed"&gt;浮凸文本&lt;/div&gt;
+
+&lt;style&gt;
+.est-embossed {
+    .embossed-text(lightblue, #6699CC);
+}
+
+.est-blind-embossed {
+    .embossed-text(lightblue);
+}
+&lt;/style&gt;</pre>
+    <div class="example example-text-effects">
+        <div class="est-embossed">浮凸文本</div>
+        <div class="est-blind-embossed">浮凸文本</div>
+    </div>
+    <button type="button" disabled="disabled">萨达阿斯顿</button>
+    <input type="submit" value="asdsa" disabled="disabled"/>
+
+    <h2>Debossed text</h2>
+    <p class="desc">文本凹陷效果</p>
+    <pre class="code prettyprint">&lt;div class="est-debossed"&gt;凹陷文本&lt;/div&gt;
+&lt;div class="est-blind-debossed"&gt;凹陷文本&lt;/div&gt;
+
+&lt;style&gt;
+.est-debossed {
+    .debossed-text(lightblue, #6699CC);
+}
+
+.est-blind-debossed {
+    .debossed-text(lightblue);
+}
+&lt;/style&gt;</pre>
+    <div class="example example-text-effects">
+        <div class="est-debossed">凹陷文本</div>
+        <div class="est-blind-debossed">凹陷文本</div>
+    </div>
+
+
+    <h2>3D text</h2>
+    <p class="desc">3D文本效果</p>
+    <pre class="code prettyprint">&lt;div class="est-3d"&gt;3D文本&lt;/div&gt;
+
+&lt;style&gt;
+.est-3d {
+    .3d-text(#FFF);
+}
+
+&lt;/style&gt;</pre>
+    <div class="example example-text-effects">
+        <div class="est-3d">3D文本</div>
+    </div>
+
+
+    <h2>Glow text</h2>
+    <p class="desc">文本发光效果</p>
+    <pre class="code prettyprint">&lt;div class="est-glow"&gt;发光文本&lt;/div&gt;
+
+&lt;style&gt;
+.est-glow-1 {
+    color: #FFF;
+    .glow-text(10px);
+}
+
+.est-glow-2 {
+    color: #FFF;
+    .glow-text(yellow);
+}
+&lt;/style&gt;</pre>
+    <div class="example example-text-effects" style="background-color:#147 !important;">
+        <div class="est-glow-1">发光文本</div>
+        <div class="est-glow-2">发光文本</div>
+    </div>
+
+
+    <h2>Blurry text</h2>
+    <p class="desc">文本模糊效果</p>
+    <pre class="code prettyprint">&lt;div class="est-blurry"&gt;模糊文本&lt;/div&gt;
+
+&lt;style&gt;
+.est-blurry {
+    .blurry-text(#FFF);
+}
+&lt;/style&gt;</pre>
+    <div class="example example-text-effects">
+        <div class="est-blurry">模糊文本</div>
+    </div>
+
+<!--    <script type="text/javascript" src="less-1.4.1.min.js"></script>-->
+    <script>
+    prettyPrint();
+    </script>
+</body>
+</html>
