@@ -1,0 +1,88 @@
+@themes-color:#44b549;
+html, body {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+ body{
+	font:12px/1.5 Microsoft yahei;
+	background: #f8f8f8;
+ }
+ a{
+ 	color:#444;text-decoration: none;
+ }
+ a:hover{
+	color:#333;
+	
+ }
+ #page{
+ 	height: 92%;width:90%;
+ 	max-width: 900px;
+ 	min-width: 320px;
+ 	margin: 2% auto;
+ 	background: #fff;box-shadow: 0 0 10px rgba(0,0,0,.3);
+ 	position: relative;
+ 	
+ }
+.sidebar{
+	position: absolute;
+	left: 0;top: 0;bottom: 0;
+	width: 150px;
+	background: #f2f2f2;
+} 
+.logo{
+	background: @themes-color;height: 120px;
+}
+.nav{
+	ul{
+		padding: 0;margin: 0;
+		li{
+			border-top: 1px solid #fff;
+			border-bottom: 1px solid #ddd;
+			line-height: 32px;
+			a{
+				display: block;text-indent: 30px;
+			}
+		}
+	}
+}
+
+.mainbody{
+	position: absolute;
+	right: 0;top: 0;bottom: 0;left: 150px;
+}
+ .button-success,.button-error,.button-warning,.button-secondary {
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	}
+.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-error {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-warning {
+	background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+    background: rgb(66, 184, 221); /* this is a light blue */
+}	
+.button-xsmall {
+    font-size: 70%;
+}
+
+.button-small {
+    font-size: 85%;
+}
+
+.button-large {
+    font-size: 110%;
+}
+
+.button-xlarge {
+    font-size: 125%;
+}        

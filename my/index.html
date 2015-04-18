@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>谢飞太的个人简历</title>
+	<link rel="stylesheet" href="my/assets/css/custom.css">
+	<link rel="stylesheet" href="my/assets/awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<div id="page" class="clearfix">
+		<div class="sidebar">
+			<div class="logo">
+				<a href="" class="face"><img src="my/assets/images/face.png" alt=""/></a>
+				<hgroup class="hgroup">
+					<h1>谢飞太</h1>
+					<h2>web前端开发</h2>
+				</hgroup>
+				<p><i class="fa fa-map-marker"></i>广东-深圳</p>
+
+			</div>
+			<div class="info">
+				<div class="block"><strong>29</strong>Y/O</div>
+				<div class="block"><strong>7+</strong>Y/Experience</div>
+				<div class="block last"><strong>75%</strong>Skills</div>
+			</div>
+			<nav class="nav" ng-controller="navCtrl">
+				<ul>
+					<li><a href="#/" ng-class={active:isActive('/')}><i class="fa fa-user-secret"></i>关于我</a></li>
+					<li><a href="#/edu" ng-class={active:isActive('/edu')}><i class="fa fa-ticket"></i>教育背景</a></li>
+					<li><a href="#/work" ng-class={active:isActive('/work')}><i class="fa fa-bar-chart"></i>工作经历</a></li>
+					<li><a href="#/demo" ng-class={active:isActive('/demo')}><i class="fa fa-github-alt"></i>项目/demo</a></li>
+				</ul>
+				<br/>
+				<ol class="link">
+					<li><i class="fa fa-envelope-o"></i> xiefeitai@163.com</li>
+					<li><i class="fa fa-home"></i> <a href="http://www.bytecats.com" target="_blank">http://www.bytecats.com</a></li>
+					<li><i class="fa fa-weibo"></i> <a href="http://weibo.com/eviilive" target="_blank">http://weibo.com/eviilive</a></li>
+
+				</ol>
+			</nav>
+		</div>
+		<div class="mainbody">
+			<div class="views" ng-view></div>
+		</div>
+	</div>
+	<!-- build js -->
+	<script src="my/assets/js/build.min.js"></script>
+</body>
+</html>
