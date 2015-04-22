@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>flex-box布局学习</title>
+	<link rel="stylesheet" href="./flex.css">
+
+</head>
+<body>
+<h3>横向</h3>
+<div class="row">
+	<div class="flex-box">
+	    <div class="cell"><div class="bg">1</div></div>
+	    <div class="cell"><div class="bg">2</div></div>
+	    <div class="cell"><div class="bg">3</div></div>
+	    <div class="cell"><div class="bg">4</div></div>
+	 </div>
+ </div>
+<h3>纵向-固定高度（  flex-direction: column; 需配高度）</h3>
+<div class="flex-box vertical" style="height: 250px;">
+    <div class="cell"><div class="bg">1</div></div>
+    <div class="cell"><div class="bg">2</div></div>
+    <div class="cell"><div class="bg">3</div></div>
+    <div class="cell"><div class="bg">4</div></div>
+</div> 
+<h3>未知的固定尺寸 + 动态的宽度</h3>
+<div class="row">
+	<div class="flex-box">
+	    <div class="cell fixed" style="width: 200px;">200px</div>
+	    <div class="cell ta-c">flex</div>
+	    <div class="cell">flex</div>
+	    <div class="cell">flex</div>
+	</div>
+</div>
+
+
+<div class="row">
+
+	<div class="flex-box">
+	    <div class="cell fixed" style="width: 100px;">100px</div>
+	    <div class="cell">flex</div>
+	    <div class="cell fixed" style="width: 120px">120px</div>
+	</div>
+</div>
+<h3>固定高度布局</h3>
+<div class="flex-box vertical" style="height: 300px;">
+    <div class="cell fixed" style="height: 50px">50px header</div>
+    <div class="cell">flex content</div>
+    <div class="cell fixed" style="height: 50px">50px footer</div>
+</div>
+<h3>水平垂直居中</h3>
+<div class="flex-box align-center justify-center" style="height: 200px; border: solid 1px #ddd;">
+    <div class="cell fixed" style="width: 50px;">50px</div>
+    <div class="cell fixed" style="width: 50px;">50px</div>
+    <div class="cell fixed" style="width: 50px;">50px</div>
+</div>
+<h3>col-*百分百布局</h3>
+<div class="flex-box">
+    <div class="cell cell-2">50%</div>
+    <div class="cell">flex</div>
+    <div class="cell">flex</div>
+</div>
+<h3>动态登高布局</h3>
+<p>只需要加上<code>align-stretch</code> 类就可以实现等高的需求， 这里值得注意的时， 如果自己在cell上设置了高度， 会覆盖flexbox分配的stretch高度。</p>
+<div class="flex-box align-stretch" >
+    <div class="cell">flex</div>
+    <div class="cell">flex</div>
+    <div class="cell"><pre>
+        x
+        x
+        x
+        x
+        x
+        x
+    </pre></div>
+</div>
+<h3>align-top</h3>
+<div class="flex-box  align-top" style="height: 200px; border: solid 1px #ddd;">
+    <div class="cell cell-2">50%</div>
+    <div class="cell">flex</div>
+    <div class="cell">flex</div>
+</div>
+<h3>align-bottom</h3>
+<div class="flex-box  align-bottom" style="height: 200px; border: solid 1px #ddd;">
+    <div class="cell cell-2">cell-2</div>
+    <div class="cell cell-1">cell-1</div>
+    <div class="cell">flex</div>
+</div>
+
+
+
+
+
+
+
+<h3>align-center</h3>
+<div class="flex-box align-center" style="height: 200px; border: solid 1px #ddd;">
+    <div class="cell cell-2">50%</div>
+    <div class="cell">flex</div>
+    <div class="cell">flex</div>
+</div>
+<h3>父与子align混用</h3>
+<div class="flex-box align-center" style="height: 200px; border: solid 1px #ddd;">
+    <div class="cell align-top">align top</div>
+    <div class="cell order-1">flex</div>
+    <div class="cell">flex</div>
+</div>
+</body>
+</html>
