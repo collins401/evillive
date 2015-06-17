@@ -83,31 +83,29 @@ body {font:400 1.4rem/1.5 Helvetica; background:#ddd; }
 	  text-align: center;
 	  letter-spacing: 4px;
 	  color:#F05200;
-	  font: 300 32px/1 'Open sans condensed', sans-serif;
+	  font: 400 32px/1 'Open sans condensed', sans-serif;
 }
-.loading{
-  width: 100px;
-  height: 100px;
+.loading {
   position: absolute;
-  top: calc(50% - 50px);
-  left: calc(50% - 50px);
-  
-  box-sizing: border-box;
-  border-top: 8px solid rgb(240,82,0);
-  border-right: 8px solid rgba(240,82,0,.3);
-  border-bottom: 8px solid rgba(240,82,0,.3);
-  border-left: 8px solid rgba(240,82,0,.3);
+  left: 50%;
+  top: 50%;
+  margin: -25px 0 -25px 0;
+  border-bottom: 6px solid rgba(0, 0, 0, .1);
+  border-left: 6px solid rgba(0, 0, 0, .1);
+  border-right: 6px solid rgba(0, 0, 0, .1);
+  border-top: 6px solid rgba(0, 0, 0, .4);
   border-radius: 100%;
-  
-  animation: rotate 1s infinite linear;
+  height: 50px;
+  width: 50px;
+  animation: rot .6s infinite linear;
 }
-@-webkit-keyframes rotate{
-	0% {-webkit-transform: rotate(0deg) translate3d(0,0,0);}
-	100% {-webkit-transform: rotate(359deg) translate3d(0,0,0);}
+@-webkit-keyframes rot {
+	0% {-webkit-transform: rotate(0deg);}
+	100% {-webkit-transform: rotate(359deg);}
 }
-@keyframes rotate{
-	0% {transform: rotate(0deg) translate3d(0,0,0);}
-	100% {transform: rotate(359deg) translate3d(0,0,0);}
+@keyframes rot {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(359deg);}
 }
 </style>
 </head>
@@ -116,7 +114,6 @@ body {font:400 1.4rem/1.5 Helvetica; background:#ddd; }
 <div id="loading">
   <div class="loading">
   </div>
-  <h3>loading</h3>
 </div>
 
 	 <span id="musicControl">
@@ -154,8 +151,7 @@ body {font:400 1.4rem/1.5 Helvetica; background:#ddd; }
            
 	<script>
 	window.onload = function(){
-		 document.getElementById('loading').style.display="none";
-		 document.getElementById('wap').style.display="block";
+			$('#loading').fadeOut();
 		}
 	wx.onMenuShareTimeline({
 		    title: '测试', // 分享标题
