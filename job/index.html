@@ -67,14 +67,58 @@ body {font:400 1.4rem/1.5 Helvetica; background:#ddd; }
 #slide01 .content li:nth-child(3){background-color: #591dd4;}
 #slide01 .content li:nth-child(4){background-color: #ffee33;}
 #slide01 .content li:nth-child(5){background-color: #882200;}
+#loading{
+	position: fixed;
+	left: 0;top: 0;bottom: 0;right: 0;
+	background:#f6f6f6;
+	z-index:10000;text-align: center;
+
+}
+#loading h3{
+	 width: 100%;
+	  position: absolute;
+	  top: calc(50% + 60px);
+	  left: 0;
+	  text-transform: uppercase;
+	  text-align: center;
+	  letter-spacing: 4px;
+	  color:#F05200;
+	  font: 300 32px/1 'Open sans condensed', sans-serif;
+}
+.loading{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  
+  box-sizing: border-box;
+  border-top: 8px solid rgb(240,82,0);
+  border-right: 8px solid rgba(240,82,0,.3);
+  border-bottom: 8px solid rgba(240,82,0,.3);
+  border-left: 8px solid rgba(240,82,0,.3);
+  border-radius: 100%;
+  
+  animation: rotate 1s infinite linear;
+}
+@-webkit-keyframes rotate{
+	0% {-webkit-transform: rotate(0deg) translate3d(0,0,0);}
+	100% {-webkit-transform: rotate(359deg) translate3d(0,0,0);}
+}
+@keyframes rotate{
+	0% {transform: rotate(0deg) translate3d(0,0,0);}
+	100% {transform: rotate(359deg) translate3d(0,0,0);}
+}
 </style>
 </head>
 
 <body>
 <div id="loading">
-  <div class="bokeh" id="bokeh">
+  <div class="loading">
   </div>
+  <h3>loading</h3>
 </div>
+
 	 <span id="musicControl">
     <a id="mc_play" class="on" onclick="play_music();">
         <audio id="musicfx" loop="loop" autoplay="autoplay" preload="auto">
@@ -107,7 +151,12 @@ body {font:400 1.4rem/1.5 Helvetica; background:#ddd; }
                  <a href="javascript:;" class="guidetop"><img src="images/arrow-up.png" alt=""></a>
                  
             </div>
+           
 	<script>
+	window.onload = function(){
+		 document.getElementById('loading').style.display="none";
+		 document.getElementById('wap').style.display="block";
+		}
 	wx.onMenuShareTimeline({
 		    title: '测试', // 分享标题
 		    link: 'http://code.feitai.me/job/', // 分享链接
