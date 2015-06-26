@@ -4,233 +4,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>SVG Loaders - Sam Herbert</title>
-    <style>
-        html {
-            height: 100%;
-            background: #3023ae;
-            background: -moz-linear-gradient(-45deg,  #3023ae 0%, #c86dd7 100%);
-            background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#3023ae), color-stop(100%,#c86dd7));
-            background: -webkit-linear-gradient(-45deg,  #3023ae 0%,#c86dd7 100%);
-            background: -o-linear-gradient(-45deg,  #3023ae 0%,#c86dd7 100%);
-            background: -ms-linear-gradient(-45deg,  #3023ae 0%,#c86dd7 100%);
-            background: linear-gradient(135deg,  #3023ae 0%,#c86dd7 100%);
-            background-attachment: fixed;
-        }
-        body{
-        	font: normal 14px/1.5 'Microsoft jhenghei',Microsoft yahei;
-        	color:#fff;
-        }
-        a {
-            text-decoration: none;color:#fff;
-        }
-
-        ul {
-            background: #fff;
-            width: 720px;
-            margin: auto;
-            margin-top: 60px;
-            list-style: none;
-            padding: 0;
-            -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.37);
-            box-shadow:      0px 0px 4px 0px rgba(0,0,0,0.37);
-        }
-        ul li {
-            width: 180px;
-            height: 180px;
-            line-height: 176px;
-            text-align: center;
-            float: left;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        ul li img {
-            vertical-align: middle;
-        }
-        li:nth-child(1) {
-            background-color: #1ABC9C;
-        }
-        li:nth-child(2) {
-            background-color: #34495E;
-        }
-        li:nth-child(3) {
-            background-color: #F39C12;
-        }
-        li:nth-child(4) {
-            background-color: #9B59B6;
-        }
-        li:nth-child(5) {
-            background-color: #3498DB;
-        }
-        li:nth-child(6) {
-            background-color: #E74C3C;
-        }
-        li:nth-child(7) {
-            background-color: #2ECC71;
-        }
-        li:nth-child(8) {
-            background-color: #2C3E50;
-        }
-        li:nth-child(9) {
-            background-color: #F1C40F;
-        }
-        li:nth-child(10) {
-            background-color: #8E44AD;
-        }
-        li:nth-child(11) {
-            background-color: #2980B9;
-        }
-        li:nth-child(12) {
-            background-color: #E74C3C;
-        }
-        .actions {
-            margin: auto;
-            margin-top: 45px;
-           text-align: center;
-        }
-       
-    .demo{
-        width: 50px;height: 50px;
-        margin:65px auto 0;
-    }
-    .demo .audio{
-        position: relative;
-        
-    }
-    /*demo one*/    
-.audio:before,.audio:after{
-    width: 5px;height: 10px;background: #fff;
-    position: absolute;
-    bottom: -40px;
-    content: "";display: block;
-    border-radius: 2px;
-}
-.audio1:before{
-    left: 0;
-    animation: audio 0.6s ease-in-out infinite;
-    -webkit-animation: audio 0.6s ease-in-out infinite;
-}
-.audio1:after{
-    left: 10px;
-     animation: audio 0.8s linear 0.2s infinite;
-    -webkit-animation: audio 0.8s linear 0.2s infinite;
-}
-.audio2:before{
-    left: 20px;
-     animation: audio 0.8s ease-in 0.4s infinite;
-    -webkit-animation: audio 0.8s ease-in 0.4s infinite;
-}
-.audio2:after{
-    left: 30px;
-     animation: audio 0.5s ease-in-out 0.6s infinite;
-    -webkit-animation: audio 0.5s ease-in-out 0.6s infinite;
-}
- @-webkit-keyframes audio{
-    0%{height: 10px;}
-    20%{height: 20px;}
-    50%{height:40px;}
-    70%{height:30px;}
-    100%{height: 10px;}
- } 
- @keyframes audio{
-    0%{height: 10px;}
-    20%{height: 20px;}
-    50%{height:40px;}
-    70%{height:30px;}
-    100%{height: 10px;}
- } 
-
- /* demo two*/
-    .rings:before,.rings:after{
-        position: absolute;content: "";display: block;
-        width: 0px;height: 0px;border:10px solid #fff;border-radius: 100%;
-        
-    }
-    .rings1:after{
-        left: 20px;top:20px;
-        animation: rings 0.5s ease-in-out infinite;
-        -webkit-animation: rings 0.5s ease-in-out infinite;
-    }
- @-webkit-keyframes rings{
-    0%{border:10px solid #fff;transform: scale(1);}
-    100%{border:1px solid #fff;transform: scale(10);}
- }     
-    /* demo five*/
-    .oval{
-        width: 45px;height: 45px;
-        border:3px solid #8EC1E3;
-        border-radius: 100%;
-        border-color: #8EC1E3 #8EC1E3 #8EC1E3 #fff;
-        animation: oval 1s linear  infinite;
-        -webkit-animation: oval 1s linear infinite;
-    }
-     @-webkit-keyframes oval{
-        0%{-webkit-transform: rotate(0deg)}
-        100%{-webkit-transform: rotate(360deg)}
-     } 
-     @keyframes oval{
-        0%{transform: rotate(0deg)}
-        100%{transform: rotate(360deg)}
-     } 
-    /* demo six*/
-    .demo-six{position: relative;
-    }
-    .demo-six .circles{
-        width: 10px;height: 10px;background: #fff;border-radius: 100%;top:20px;
-        position: absolute;
-
-        
-    }
-    .demo-six .circles:nth-child(1){
-        animation: circles 0.8s ease-in-out  infinite;
-        -webkit-animation: circles 0.8s ease-in-out infinite;
-    }
-    .demo-six .circles:nth-child(2){
-        left: 40px;
-         animation: circles 0.8s ease-in-out infinite;
-        -webkit-animation: circles 0.8s ease-in-out infinite;
-    }
-    .demo-six .circles:nth-child(3){
-        left: 20px;
-         animation: circles 0.8s ease-in-out 0.2s  infinite;
-        -webkit-animation: circles 0.8s ease-in-out 0.2s infinite;
-    }
- @-webkit-keyframes circles{
-    0%{-webkit-transform: scale(1);opacity: 0.6}
-    50%{-webkit-transform: scale(1.4);opacity: 1}
-    100%{-webkit-transform: scale(1);opacity: 0.6}
- } 
-  @keyframes circles{
-    0%{transform: scale(1);opacity: 0.6}
-    50%{transform: scale(1.4);opacity: 1}
-    100%{transform: scale(1);opacity: 0.6}
- } 
-    /*demo eight*/
-    .puff{
-        position: relative;
-    }
-    .puff:before,.puff:after{
-        left: 20px;top:20px;
-        position: absolute;
-        content: "";display: block;
-        width: 0px;height: 0px;
-        border:2px solid #fff;
-        border-radius: 100%;
-        opacity: 0;
-    }
-    .puff:before{
-         animation: puff 1s ease-in-out 0.8s infinite;
-        -webkit-animation: puff 1s ease-in-out 0.8s infinite;
-    }
-    .puff:after{
-        animation: puff 1s linear  infinite;
-        -webkit-animation: puff 1s linear infinite;
-    }
-     @-webkit-keyframes puff{
-        0%{width: 1px;height: 1px;opacity: 1;}
-        100%{width: 30px;height: 30px;left: 5px;top:5px;opacity: 0;}
-     } 
-    </style>
+    <title>CSS3实现基于SVG格式loading效果 </title>
+    <link rel="stylesheet" href="css3.css">
 </head>
 
 <body>
@@ -244,19 +19,36 @@
         </li>
         <!-- demo two -->
         <li>
-            <div class="demo">
+            <!-- <div class="demo">
                 <div class="rings rings1"></div>
                 <div class="rings rings2"></div>
+            </div> -->
+            <div class="demo">
+                <div class="puff"></div>
             </div>
-            <img src="svg-loaders/rings.svg" width="60" alt="">
         </li>
         <!-- demo three -->
         <li>
-            <img src="svg-loaders/grid.svg" width="40" alt="">
+        	<div class="demo">
+        		<div class="row-grid">
+	        		<span class="grid"></span>
+	        		<span class="grid"></span>
+	        		<span class="grid"></span>
+	        		<span class="grid"></span>
+	        		<span class="grid"></span>
+	        		<span class="grid"></span>
+	        		<span class="grid"></span>
+	        		<span class="grid"></span>
+	        		<span class="grid"></span>
+        		</div>
+        	</div>
         </li>
         <!-- demo four -->
         <li>
-            <img src="svg-loaders/hearts.svg" width="80" alt="">
+        	<div class="demo">
+        		<div class="hearts">&#9829;</div>
+        	</div>
+            
         </li>
         <!-- demo five -->
         <li>
@@ -272,28 +64,58 @@
                 <div class="circles"></div>
             </div>
         </li>
-        <!-- demo saven -->
+        <!-- demo seven -->
         <li>
-            <img src="svg-loaders/spinning-circles.svg" width="50" alt="">
+        	<div class="demo">
+        		<div class="row-spinning">
+        			<span class="spinning"></span>
+        			<span class="spinning"></span>
+        			<span class="spinning"></span>
+        			<span class="spinning"></span>
+        			<span class="spinning"></span>
+        			<span class="spinning"></span>
+        			<span class="spinning"></span>
+        			<span class="spinning"></span>
+        		</div>
+        	</div>
         </li>
         <!-- demo eight -->
         <li>
             <div class="demo">
                 <div class="puff"></div>
             </div>
-            <img src="svg-loaders/puff.svg" width="50" alt="">
+          
         </li>
+        <!-- demo night -->
         <li>
-            <img src="svg-loaders/circles.svg" width="50" alt="">
+        	<div class="demo">
+        		<div class="rotate"></div>
+        	</div>
+          
         </li>
+        <!-- demo tem -->
         <li>
-            <img src="svg-loaders/tail-spin.svg" width="50" alt="">
+        	<div class="demo">
+        		<div class="tail-spin"></div>
+        	</div>
+            
         </li>
+        <!-- demo eleven -->
         <li>
-            <img src="svg-loaders/bars.svg" width="40" alt="">
+        	<div class="demo">
+        		<div class="bars"></div>
+        		<div class="bars2"></div>
+
+        	</div>
         </li>
+       	<!-- demo twelve -->
         <li>
-            <img src="svg-loaders/ball-triangle.svg" width="50" alt="">
+        	<div class="demo">
+        		<div class="triangle ball1"></div>
+        		<div class="triangle ball2"></div>
+        		<div class="triangle ball3"></div>
+        	</div>
+       
         </li>
         <div style="clear: both"></div>
     </ul>
