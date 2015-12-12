@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		var imgs = $('.post').find('img');
+		// console.log(imgs[2].src);
+		var urls = [];
+		for (var i = 0; i < imgs.length; i++) {
+			urls.push(imgs[i].src);
+		};
+		console.log(urls);
+		$('.post img').click(function(event) {
+			/* Act on the event */
+			event.preventDefault();
+			var src = this.src;
+			// alert(src);
+			wx.previewImage({
+			    current: src, // 当前显示图片的http链接
+			    urls: urls // 需要预览的图片http链接列表
+			});
+
+		});
+	});
+</script>
+</head>
+<body >
+<style>
+	img {
+		width: 60%;
+	}
+</style>
+<div class="post">
+<img src="http://www.visasoo.com/demo/2.jpg" alt=""><br>
+<img src="http://www.visasoo.com/demo/3.jpg" alt=""><br>
+<img src="http://www.visasoo.com/demo/4.jpg" alt=""><br>
+<img src="http://www.visasoo.com/demo/5.jpg" alt=""><br>
+<img src="http://www.visasoo.com/demo/6.jpg" alt=""><br><br>
+
+<a href="http://www.visasoo.com/demo/1.jpg"><img src="http://www.visasoo.com/demo/1.jpg" alt=""></a><br>
+<a href="http://www.visasoo.com/demo/2.jpg"><img src="http://www.visasoo.com/demo/2.jpg" alt=""></a><br>
+<a href="http://www.visasoo.com/demo/3.jpg"><img src="http://www.visasoo.com/demo/3.jpg" alt=""></a><br>
+<a href="http://www.visasoo.com/demo/4.jpg"><img src="http://www.visasoo.com/demo/4.jpg" alt=""></a><br>
+<a href="http://www.visasoo.com/demo/5.jpg"><img src="http://www.visasoo.com/demo/5.jpg" alt=""></a><br>
+<a href="http://www.visasoo.com/demo/6.jpg"><img src="http://www.visasoo.com/demo/6.jpg" alt=""></a>
+</div>
+</body>
+</html>
