@@ -5,7 +5,7 @@
     <title>vue-demo2</title>
     <link rel="stylesheet" href="http://code.feitai.me/vue-demo2/static/style.css">
             <script>
-(function(d,e){(function(){var a=e.querySelector('meta[name="viewport"]'),c=e.querySelector('meta[name="hotcss"]'),b=d.devicePixelRatio||1;c&&(c=c.getAttribute("content"))&&(c=c.match(/initial\-dpr=([\d\.]+)/))&&(b=parseFloat(c[1]));b=1/b;b="width=device-width, user-scalable=no, initial-scale="+b+", minimum-scale="+b+", maximum-scale="+b+"";a?a.setAttribute("content",b):(a=e.createElement("meta"),a.setAttribute("name","viewport"),a.setAttribute("content",b),e.head.appendChild(a))})();var f={mresize:function(){var a=1280<d.innerWidth?1280:d.innerWidth;if(!a)return!1;e.documentElement.style.fontSize=20*a/320+"px"}};f.mresize();d.addEventListener("resize",f.mresize,!1);d.addEventListener("load",f.mresize,!1);setTimeout(function(){f.mresize()},300)})(window,document);
+!function(n){var e=n.document,t=e.documentElement,i=720,d=i/72,o="orientationchange"in n?"orientationchange":"resize",a=function(){var n=t.clientWidth||320;n>600&&(n=600),t.style.fontSize=n/d+"px"};e.addEventListener&&(n.addEventListener(o,a,!1),e.addEventListener("DOMContentLoaded",a,!1))}(window);
         </script>
     <style type="text/css">
     #loading{
@@ -15,7 +15,7 @@
       top:0;
       left: 0;
       text-align:center;
-      font-size: 24px;
+      font-size: 12px;
       color: #333;
       display: table;
       background: #fff;
