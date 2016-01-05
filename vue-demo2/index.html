@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>vue-demo2</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="http://code.feitai.me/vue-demo2/static/style.css">
-            <script>
-!function(n){var e=n.document,t=e.documentElement,i=720,d=i/72,o="orientationchange"in n?"orientationchange":"resize",a=function(){var n=t.clientWidth||320;n>500&&(n=500),t.style.fontSize=n/d+"px"};e.addEventListener&&(n.addEventListener(o,a,!1),e.addEventListener("DOMContentLoaded",a,!1))}(window);
+    <title>vue-demo</title>
+    <link rel="stylesheet" href="./static/style.css">
+    <script>
+(function(d,e){(function(){var a=e.querySelector('meta[name="viewport"]'),c=e.querySelector('meta[name="hotcss"]'),b=d.devicePixelRatio||1;c&&(c=c.getAttribute("content"))&&(c=c.match(/initial\-dpr=([\d\.]+)/))&&(b=parseFloat(c[1]));b=1/b;b="width=device-width, user-scalable=no, initial-scale="+b+", minimum-scale="+b+", maximum-scale="+b+"";a?a.setAttribute("content",b):(a=e.createElement("meta"),a.setAttribute("name","viewport"),a.setAttribute("content",b),e.head.appendChild(a))})();var f={mresize:function(){var a=1280<d.innerWidth?1280:d.innerWidth;if(!a)return!1;e.documentElement.style.fontSize=20*a/320+"px"}};f.mresize();d.addEventListener("resize",f.mresize,!1);d.addEventListener("load",f.mresize,!1);setTimeout(function(){f.mresize()},300)})(window,document);
         </script>
     <style type="text/css">
+    body{
+      overflow-x: hidden
+    }
     #loading{
       position: fixed;
       width: 100%;
@@ -16,7 +18,7 @@
       top:0;
       left: 0;
       text-align:center;
-      font-size: 12px;
+      font-size: 24px;
       color: #333;
       display: table;
       background: #fff;
@@ -24,22 +26,39 @@
     }
     #loading span{
       display: table-cell;
-  vertical-align: middle;
+      vertical-align: middle;
     }
+.expand-transition {
+  top:0;
+  opacity: 1;
+    transition: all .3s ease-in-out;
+   transform: translateX(0);
+   overflow: hidden;
+   position:absolute;
+   width:100%;
+   left: 0;
+   height:100%;
+   background-color: #fff;
+}
+
+.expand-enter, .expand-leave {
+    transform: translateX(40px);
+      opacity: 0;
+}
     </style>
   </head>
   <body>
 
   	<div id="app">
-   	 	<router-view ></router-view>
+   	 	<router-view transition="expand"></router-view>
       <ul class="footbar">
         <li v-link="{ path: '/', exact: true}">首页</li>
-        <li v-link="{ path:'/list',exact: true}">产品列表</li>
+        <li v-link="{ path:'/list',exact: true}">列表</li>
         <li v-link="{ path: '/cart', exact: true}">购物车</li>
         <li v-link="{ path: '/ucenter', exact: true}">用户中心</li>
       </ul>
     </div>
     <div id="loading"><span>加载中...</span></div>
-    <script src="http://code.feitai.me/vue-demo2/static/build.js"></script>
+    <script src="./static/build.js"></script>
   </body>
 </html>
