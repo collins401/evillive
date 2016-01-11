@@ -50,13 +50,7 @@
   <body>
 
   	<div id="app">
-   	 	<router-view transition="expand"></router-view>
-      <ul class="footbar">
-        <li v-link="{ path: '/', exact: true}">首页</li>
-        <li v-link="{ path:'/list',exact: true}">列表</li>
-        <li v-link="{ path: '/cart', exact: true}">购物车</li>
-        <li v-link="{ path: '/ucenter', exact: true}">用户中心</li>
-      </ul>
+   	 	<router-view></router-view>
     </div>
     <div id="loading"><span>加载中...</span></div>
     <script src="./static/build.js"></script>
