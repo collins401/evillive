@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	
+<meta name="viewport" content="width=640 user-scalable=no"   />
+	<title>大屏幕</title>
+  	<style type="text/css">
+  	body{
+  		margin:0;
+  	}
+
+
+ul li{
+	border-bottom:1px solid #ddd;
+}
+.aa:before{
+	display:inline-block;
+	content:'\2713';
+	color:#fff;
+	width:30px;height:30px;
+	border:1px solid #ddd;
+	text-align: center;
+	line-height:30px;
+	font-size: 20px;
+	transition:all .2s linear;
+}
+#test{
+	display:none;
+}
+#test:checked:[disabled="true"] ~.aa:before{
+	opacity:0.3;
+}
+#test:checked ~ .aa:before{
+	content:'\2713';
+	border:1px solid red;
+	color:red;
+}
+  	</style>
+  	<script type="text/javascript">
+function a(callback) 
+{    
+    alert("我是parent函数a！"); 
+    alert("调用回调函数"); 
+    callback(); 
+} 
+function b(){ 
+alert("我是回调函数b"); 
+ 
+} 
+function c(){ 
+alert("我是回调函数c"); 
+ 
+} 
+ 
+function test() 
+{ 
+    a(b); 
+   a(c); 
+} 
+ 
+  	</script>
+</head>
+<body>
+<h1>这是大标题</h1>
+<h2>这是大标题</h2>
+<h3>这是大标题</h3>
+<h4>这是大标题</h4>
+<p>这里是正文段落标识</p>
+<ul>
+	<li>1212</li>
+	<li>121</li>
+	<li>1212</li>
+</ul>
+
+	<input type="checkbox" id="test" checked="checked" >
+	<label for="test" class="aa">我的时间</label>
+</body>
+</html>
