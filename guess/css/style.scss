@@ -25,10 +25,6 @@
   		font-size:1.6em;
   	}
   }
-  %gs-icon{
-      background:url(../images/gs_icon_v2.png) no-repeat;
-      background-size:rem(302) rem(1143);
-  }
   .guess-func{
     padding-top: rem(20);
     padding-right: rem(40);
@@ -42,12 +38,19 @@
       height: rem(52);
       line-height:rem(56);
       font-size: rem(25);
-      color:#fff;text-align: center;
+      color:#666;text-align: center;
       font-weight: bold;
       padding: 0 rem(52) 0 rem(65);
-      @extend %gs-icon;
-      background-position: 0 rem(-970);
+      background-color: #fff;
       position:relative;
+      &:before{
+        content:'积分';
+        display: block;
+        position:absolute;
+        left: 0;
+        width: rem(60);height: rem(52);
+        background-color: #ddd;
+      }
     }
     .add-score{
       width: rem(52);
@@ -55,8 +58,9 @@
       display: inline-block;
       position:absolute;
       right: 0;top:0;
-      @extend %gs-icon;
-      background-position: rem(-2) rem(-148);
+      background-color: #f60;
+      color:#fff;
+
     }
   }
   .guess-func{

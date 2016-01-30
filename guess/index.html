@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>疯狂猜大小</title>
-	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript">
     !function(a,b){function t(){var c,b=d.getBoundingClientRect().width;b/g>540&&(b=540*g),c=b/10,d.style.fontSize=c+"px",j.rem=a.rem=c}var i,k,l,m,n,o,p,q,r,s,c=a.document,d=c.documentElement,e=c.querySelector('meta[name="viewport"]'),f=c.querySelector('meta[name="flexible"]'),g=0,h=0,j=b.flexible||(b.flexible={});e?(k=e.getAttribute("content").match(/initial\-scale=([\d\.]+)/),k&&(h=parseFloat(k[1]),g=parseInt(1/h))):f&&(l=f.getAttribute("content"),l&&(m=l.match(/initial\-dpr=([\d\.]+)/),n=l.match(/maximum\-dpr=([\d\.]+)/),m&&(g=parseFloat(m[1]),h=parseFloat((1/g).toFixed(2))),n&&(g=parseFloat(n[1]),h=parseFloat((1/g).toFixed(2))))),g||h||(o=a.navigator.appVersion.match(/android/gi),p=a.navigator.appVersion.match(/iphone/gi),q=a.devicePixelRatio,p||o?(r=p?"iphone":"android",d.setAttribute("class",r),g=q>=3&&(!g||g>=3)?3:q>=2&&(!g||g>=2)?2:1):(d.setAttribute("class","root-ipad"),g=1),h=1/g),d.setAttribute("data-dpr",g),e||(e=c.createElement("meta"),e.setAttribute("name","viewport"),e.setAttribute("content","initial-scale="+h+", maximum-scale="+h+", minimum-scale="+h+", user-scalable=no"),d.firstElementChild?d.firstElementChild.appendChild(e):(s=c.createElement("div"),s.appendChild(e),c.write(s.innerHTML))),a.addEventListener("resize",function(){clearTimeout(i),i=setTimeout(t,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(i),i=setTimeout(t,300))},!1),"complete"===c.readyState?c.body.style.fontSize=14*g+"px":c.addEventListener("DOMContentLoaded",function(){c.body.style.fontSize=14*g+"px"},!1),t(),j.dpr=a.dpr=g,j.refreshRem=t}(window,window["lib"]||(window["lib"]={}));
     </script>
@@ -19,7 +19,7 @@
           <a href="javascript:;" @click="openBang">榜</a>
           <div class="guess-score" >
             <i v-text="totalScore" style="font-style: normal;"></i>
-            <span class="add-score" @click="addScore"></span>
+            <span class="add-score" @click="addScore">+</span>
           </div>
         </div>
         <div class="guess-main">
@@ -113,7 +113,7 @@
       </div>
   </div>
 	<div class="loading" id="mask"></div>
-	<script src="./vue.js"></script>
-	<script src="./main.js"></script>
+	<script src="vue.js"></script>
+	<script src="main.js"></script>
 </body>
 </html>

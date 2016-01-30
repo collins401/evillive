@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-family: sans-serif;
   /* 1 */
@@ -252,10 +253,6 @@ th {
     text-shadow: 1px 2px 2px red;
     font-size: 1.6em; }
 
-.guess-func .guess-score, .guess-func .add-score {
-  background: url(../images/gs_icon_v2.png) no-repeat;
-  background-size: 4.02667rem 15.24rem; }
-
 .guess-func {
   padding-top: 0.26667rem;
   padding-right: 0.53333rem;
@@ -269,12 +266,20 @@ th {
     height: 0.69333rem;
     line-height: 0.74667rem;
     font-size: 0.33333rem;
-    color: #fff;
+    color: #666;
     text-align: center;
     font-weight: bold;
     padding: 0 0.69333rem 0 0.86667rem;
-    background-position: 0 -12.93333rem;
+    background-color: #fff;
     position: relative; }
+    .guess-func .guess-score:before {
+      content: '积分';
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 0.8rem;
+      height: 0.69333rem;
+      background-color: #ddd; }
   .guess-func .add-score {
     width: 0.69333rem;
     height: 0.69333rem;
@@ -282,7 +287,8 @@ th {
     position: absolute;
     right: 0;
     top: 0;
-    background-position: -0.02667rem -1.97333rem; }
+    background-color: #f60;
+    color: #fff; }
 
 .guess-func a {
   display: inline-block;
