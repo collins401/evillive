@@ -1,0 +1,83 @@
+$color: #f60;
+$bg-color: #f9f9f9;
+$designWidth : 750;  // 设计稿宽度
+$base-color:   #666666; // 基础文字颜色      
+$themes-color: #f60; // 主题颜色
+$primary-color: #04BE02;
+$border-color: #ddd; // 边线颜色
+$inner-border: 15; // 内边距(px)————按设计稿边距计算
+$price-color: red;
+$inner-range: 20;
+$themes-color-cx: red;
+
+$gs-bg-color: #422910;
+// 按钮组
+$btn-group: (  
+    important: #d84315,
+    main     : #42a5f5,
+    trivial  : #90a4ae,
+    info     : #04BE02,
+);
+
+@function rem($px, $base-font-size: 75px) {
+    @if (unitless($px)) {
+        @return rem($px + 0px); // That may fail.
+    } @else if (unit($px) == rem) {
+        @return $px;
+    }
+    @return ($px / $base-font-size) * 1rem;
+}
+@mixin size($w,$h){
+	width: rem($w);
+	height: rem($h);
+}
+@mixin flex($num){
+	-webkit-box-flex: $num;
+    -moz-box-flex: $num;
+    -ms-flex: $num;
+    -webkit-flex: $num;
+    flex: $num;
+}
+@mixin ellipsis($n){
+    overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: $n;
+        -webkit-box-orient: vertical;
+    
+    
+}
+@mixin font-dpr($font-size){
+    font-size: $font-size;
+
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+@mixin px2rem($property,$px-values,$baseline-px:72px,$support-for-ie:false){
+    //Conver the baseline into rems
+    $baseline-rem: $baseline-px / 1rem * 1;
+    //Print the first line in pixel values
+    @if $support-for-ie {
+        #{$property}: $px-values;
+    }
+    //if there is only one (numeric) value, return the property/value line for it.
+    @if type-of($px-values) == "number"{
+        #{$property}: $px-values / $baseline-rem;
+    }
+    @else {
+        //Create an empty list that we can dump values into
+        $rem-values:();
+        @each $value in $px-values{
+            // If the value is zero or not a number, return it
+            @if $value == 0 or type-of($value) != "number"{
+                $rem-values: append($rem-values, $value / $baseline-rem);
+            }
+        }
+        // Return the property and its list of converted values
+        #{$property}: $rem-values;
+    }
+}

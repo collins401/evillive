@@ -1,0 +1,349 @@
+@import "base.scss";
+.clearfix{
+    &:after,&:before{
+      content: '';
+      display: table;
+    }
+    &:after{
+      clear:both;
+    }
+  }
+  .inner-rl{padding-left: rem($inner-range);padding-right: rem($inner-range);}
+  .pull-right{float:right;}
+  .pull-left{float:left;}
+  .ta-r{text-align: right;}
+  .guesshome{
+    background-color: #1B85C3;
+  }
+  .header{
+  
+  	text-align: center;
+  	line-height: rem(110);
+  	border-bottom:1px solid  rgba(255,255,255,.3);
+  	h1{
+  		margin: 0;color:#fff;text-shadow: 1px 2px 2px red;
+  		font-size:1.6em;
+  	}
+  }
+  %gs-icon{
+      background:url(../images/gs_icon_v2.png) no-repeat;
+      background-size:rem(302) rem(1143);
+  }
+  .guess-func{
+    padding-top: rem(20);
+    padding-right: rem(40);
+    padding-left: rem(40);
+    color:#fff;
+    .guess-score{
+      margin-top: rem(14);
+      float:right;
+      display: inline-block;
+      width: rem(265);
+      height: rem(52);
+      line-height:rem(56);
+      font-size: rem(25);
+      color:#fff;text-align: center;
+      font-weight: bold;
+      padding: 0 rem(52) 0 rem(65);
+      @extend %gs-icon;
+      background-position: 0 rem(-970);
+      position:relative;
+    }
+    .add-score{
+      width: rem(52);
+      height: rem(52);
+      display: inline-block;
+      position:absolute;
+      right: 0;top:0;
+      @extend %gs-icon;
+      background-position: rem(-2) rem(-148);
+    }
+  }
+  .guess-func{
+    a{
+      display: inline-block;
+      @include size(70,70);
+      text-align: center;
+      line-height: rem(70);
+      background-color: #f6f6f6;
+      margin-right:rem(20);
+      color:#666;
+      border-radius: 4px;
+      @include font-dpr(16px);
+      &:first-child{
+        background-position:0 rem(-310);
+      }
+      &:nth-child(2){
+        background-position:0 rem(-233);
+      }
+    }
+  }
+  .guess-main{
+    height: rem(790);position:relative;
+  }
+  .gs-result{
+    position:absolute;color:#ffeeaa;
+    line-height: 1.2;
+    right: rem(40);
+    top:rem(40);
+    @include font-dpr(20px);
+    span{color:#ffcc01;@include font-dpr(22px);}
+    .resultcount{
+       @include font-dpr(28px);
+    }
+  }
+  .flex-wrap {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+    // 垂直方向
+.mid-center {
+    -webkit-box-pack: center;
+    box-pack: center;
+    -webkit-box-align: center;
+    box-align: center;
+    box-pack: center;
+    -ms-flex-pack: center;
+    display: -ms-flexbox;
+    -ms-flex-align: center;
+    justify-content: center;
+    align-items: center;
+}
+  .guess-call{
+   	margin: 0 rem(10);
+    > div{
+    	@include flex(1);
+    	height: rem(220);
+    	padding: 0 rem(10);text-align: center;
+     .gs-panel{
+     	padding: rem(10) 0;
+     	background-color:#f8f8f8;
+      	border-radius: 16px;
+      	&.active{
+      		background-color: #bbb;
+      		margin-top: 4px;
+      	}
+     }
+      
+      strong{
+      	display: block;
+      	color:#EA8000;
+      	@include font-dpr(20px);
+      }
+      span{
+      	display: block;color:#999;
+      	&:last-child{
+      		@include font-dpr(12px);
+      	}
+      }
+      &.gu-call-small{
+        background-position: 0 rem(-172);
+      }
+      &.gu-call-baozi{
+        background-position: 0 rem(-430);
+      }
+      &.gu-call-big{
+        background-position: 0 rem(-695);
+      }
+      &.gu-call-small.active{
+        background-position: rem(-254) rem(-172);
+      }
+      &.gu-call-baozi.active{
+        background-position: rem(-252) rem(-430);
+      }
+      &.gu-call-big.active{
+        background-position: rem(-254) rem(-693);
+      }
+    }
+  }
+  %sanzi-num{
+    background:url(../images/sourceR.png) no-repeat;
+    background-size:rem(273) auto;
+  }
+@keyframes rocks{
+    0%{transform:translateX(0);}
+    10%{transform:translateX(rem(150));}
+    20%{transform:translateX(rem(-150));}
+    30%{transform:translateX(rem(150));}
+    40%{transform:translateX(rem(-150));}
+    50%{transform:translateX(rem(150));}
+    60%{transform:translateX(rem(-150));}
+    70%{transform:translateX(rem(150));}
+    80%{transform:translateX(rem(-150));}
+    90%{transform:translateX(rem(150));}
+    95%{transform:translateX(0);}
+    to{transform:translateX(0);}
+}
+// @-webkit-keyframes rocks{
+//     0 {-webkit-transform:translateX(0);}
+//     10%,30%,50%,70%,90%{-webkit-transform:translateX(rem(150));}
+//     20%,40%,60%,80%,{-webkit-transform:translateX(rem(-150));}
+//     95%{-webkit-transform:translateX(0);}
+//     to {-webkit-transform:translateX(0);}
+// }
+  .gs-roller{
+    @include size(370,650);
+    margin: 0 auto;
+    position:relative;
+       -webkit-transition:all 0.2s 0.3s linear;
+       transition:all 0.2s 0.3s linear;
+
+    &.active{ 
+         
+          -webkit-animation: rocks 2s linear 0.6s infinite;
+          animation: rocks 2s linear 0.6s infinite;
+      .gs-roller-cent{
+         -webkit-transform:translateY(rem(150));
+         transform:translateY(rem(150));
+         background:url(../images/source2.png) no-repeat;
+      background-size: rem(371) auto;
+      background-position:rem(10) top;
+      }
+
+
+    }
+    .gs-roller-cent{
+      -webkit-transition:transform 0.2s linear;
+       transition:transform 0.2s linear;
+      height: rem(440);
+      
+      // 
+      z-index:2;
+      position:relative;
+    }
+    .gs-roller-bot{
+      z-index:1;
+      position:absolute;
+      width: 100%;
+      height: rem(250);
+      bottom:0;
+      left:0;
+      background:url(../images/source2.png) no-repeat;
+      -webkit-background-size: rem(371) auto;
+      background-size: rem(371) auto;
+      background-position:0 bottom;
+    }
+    .sanzi{
+      display: inline-block;
+      @include size(88,90);
+      @extend %sanzi-num;
+      position:absolute;
+      &:first-child{
+          top:rem(20);
+          left: rem(50)
+      }
+      &:nth-child(2){
+          top:rem(50);
+          left: rem(140);
+      }
+      &:nth-child(3){
+        right:rem(50);
+        top:rem(20);
+      }
+      &.one{
+        background-position:rem(-40) rem(-5);
+      }
+      &.two{
+        background-position:rem(-140) rem(-5);
+      }
+      &.three{
+        background-position:rem(-40) rem(-100);
+      }
+      &.four{
+        background-position:rem(-140) rem(-100);
+      }
+      &.five{
+        background-position:rem(-40) rem(-200);
+      }
+      &.six{
+        background-position:rem(-140) rem(-200);
+      }
+    }
+  }
+  .guess-raise{
+    position:absolute;
+    bottom:rem(20);right:rem(20);
+
+    .gs-btns{
+      @include size(450,100);
+      line-height: rem(100);
+      background-color:#342512;
+      color:#fff;
+      text-align: center;
+      border-radius: 6px;
+      overflow: hidden;
+      i{@include font-dpr(30px);font-style: normal
+      }
+      span{
+        width: rem(105);
+        height: rem(100);
+        display: inline-block;
+        color:#333;font-weight: bold;
+        @include font-dpr(30px);
+        background-color: #fff;
+        &.gs-less{
+          float:left;
+          &.active{
+            background-color: #bbb;
+          }
+        }
+        &.gs-add{
+          float:right;
+          &.active{
+            background-color: #bbb;
+          }
+        }
+      }
+    }
+  }
+.loading{
+  position:fixed;
+  left: 0;top: 0;right: 0;bottom: 0;
+  background-color:#fff;
+  z-index:100000;
+}
+.gs-bang,.gs-rules{
+	background:$gs-bg-color;
+	width: 100%;
+	height: 100%;
+	position:fixed;
+	left:0;top:0;
+	 color:#DFCCA6;
+	z-index:10000;
+}
+.guessrule-header{
+    height: rem(95);
+  	h1{
+  		margin: 0;text-align: center;
+  	}
+   
+  }
+  .guessrule-back{
+      @include size(100,95);
+      display: inline-block;
+      margin-left: rem(20);
+     
+    background-size:rem(160) auto;
+    position:absolute;
+    left:rem(10);
+  }
+  .guessrule-info{
+    margin: rem(30);
+    padding: rem(10) rem(20);
+    border: 0.02rem solid #704f2a;
+    border-radius: 0.15rem;
+    box-shadow: 0.03rem 0.03rem 0.03rem #1e1306 inset;
+  }
+.mask-transition {
+  	transform:translateX(0%);
+  	transition:all 0.2s linear;
+  	opacity:1;
+}
+
+.mask-enter, .mask-leave {
+	opacity:0;
+    transform:translateX(100%);
+}

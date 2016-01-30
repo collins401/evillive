@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>疯狂猜大小</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script type="text/javascript">
+    !function(a,b){function t(){var c,b=d.getBoundingClientRect().width;b/g>540&&(b=540*g),c=b/10,d.style.fontSize=c+"px",j.rem=a.rem=c}var i,k,l,m,n,o,p,q,r,s,c=a.document,d=c.documentElement,e=c.querySelector('meta[name="viewport"]'),f=c.querySelector('meta[name="flexible"]'),g=0,h=0,j=b.flexible||(b.flexible={});e?(k=e.getAttribute("content").match(/initial\-scale=([\d\.]+)/),k&&(h=parseFloat(k[1]),g=parseInt(1/h))):f&&(l=f.getAttribute("content"),l&&(m=l.match(/initial\-dpr=([\d\.]+)/),n=l.match(/maximum\-dpr=([\d\.]+)/),m&&(g=parseFloat(m[1]),h=parseFloat((1/g).toFixed(2))),n&&(g=parseFloat(n[1]),h=parseFloat((1/g).toFixed(2))))),g||h||(o=a.navigator.appVersion.match(/android/gi),p=a.navigator.appVersion.match(/iphone/gi),q=a.devicePixelRatio,p||o?(r=p?"iphone":"android",d.setAttribute("class",r),g=q>=3&&(!g||g>=3)?3:q>=2&&(!g||g>=2)?2:1):(d.setAttribute("class","root-ipad"),g=1),h=1/g),d.setAttribute("data-dpr",g),e||(e=c.createElement("meta"),e.setAttribute("name","viewport"),e.setAttribute("content","initial-scale="+h+", maximum-scale="+h+", minimum-scale="+h+", user-scalable=no"),d.firstElementChild?d.firstElementChild.appendChild(e):(s=c.createElement("div"),s.appendChild(e),c.write(s.innerHTML))),a.addEventListener("resize",function(){clearTimeout(i),i=setTimeout(t,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(i),i=setTimeout(t,300))},!1),"complete"===c.readyState?c.body.style.fontSize=14*g+"px":c.addEventListener("DOMContentLoaded",function(){c.body.style.fontSize=14*g+"px"},!1),t(),j.dpr=a.dpr=g,j.refreshRem=t}(window,window["lib"]||(window["lib"]={}));
+    </script>
+</head>
+<body id="app" class="guesshome">
+	<div class="container" id="guesshome">
+    <header class="header">
+      	<h1>疯狂猜大小</h1>
+    </header>
+    <section class="guess-mainbody">
+        <div class="guess-func">
+          <a href="javascript:;" @click="openRules">?</a>
+          <a href="javascript:;" @click="openBang">榜</a>
+          <div class="guess-score" >
+            <i v-text="totalScore" style="font-style: normal;"></i>
+            <span class="add-score" @click="addScore"></span>
+          </div>
+        </div>
+        <div class="guess-main">
+        	<span class="gs-combo" v-show="gsCombo >2">连击+<i v-text="gsCombo"></i></span>
+            <div class="gs-result" v-if="gsResult" transition>
+                <span v-text="resultNum.a"></span>,
+                <span v-text="resultNum.b"></span>,
+                <span v-text="resultNum.c"></span>
+                点<span class="resultcount" v-text="resultNum.count"></span>
+                <div v-if="resultNum.win">
+                    恭喜你<br>获得<i v-text="resultNum.prize"></i>积分
+                </div>
+                <div v-else>
+                  哎呀 <br>你你你猜错鸟！
+                </div>
+            </div>
+            <div class="gs-roller" :class="{'active': rock.flag}" transition="aa">
+              <div class="gs-roller-cent"></div>
+              <div class="gs-roller-bot">
+                <span class="sanzi" :class="sanziGroup.one"></span>
+                <span class="sanzi" :class="sanziGroup.two"></span>
+                <span class="sanzi" :class="sanziGroup.three"></span>
+              </div>
+            </div>
+
+
+  
+          <div class="guess-raise">
+              <div class="gs-btns" >
+                  <span class="gs-less" :class="{'active': gsRaiseClass == 'less'}" @click="gsRaise('less')">-</span>
+                  <span class="gs-add" :class="{'active': gsRaiseClass == 'add'}" @click="gsRaise('add')">+</span>
+                  <i v-text="gsRaiseNum"></i>
+              </div>
+          </div>
+        </div>
+        <div class="flex-wrap guess-call ">
+            <div class="gu-call-small" >
+            	<div class="gs-panel" :class="{'active': gscallStatus == 'small'}" @click="gsCall('small')">
+            	<strong>小</strong>
+            	<span>押中赢x2</span>
+            	<span>4-10点</span>
+            	</div>
+            </div>
+            <div class="gu-call-baozi" >
+            <div class="gs-panel" :class="{'active': gscallStatus == 'baozi'}" @click="gsCall('baozi')">
+            	<strong>豹子</strong>
+            	<span>押中赢x8</span>
+            	<span>3点数相同</span>
+            	</div>
+            </div>
+            <div class="gu-call-big" >
+            <div class="gs-panel" :class="{'active': gscallStatus == 'big'}" @click="gsCall('big')">
+            	<strong>大</strong>
+            	<span>押中赢x2</span>
+            	<span>11-17点</span>
+            	</div>
+            </div>
+        </div>
+    </section>
+  </div>
+  <div class="gs-bang" v-show="gsBang" transition="mask">
+  	  <header class="header">
+        <span @click="gsBang =!gsBang" class="guessrule-back"><</span>
+         <h1>高手排行榜</h1>
+    </header>
+ 
+
+  </div>
+  <div class="gs-rules" v-show="gsRules" transition="mask">
+  	<header class="header">
+        <span @click="gsRules =!gsRules" class="guessrule-back"><</span>
+        <h1>游戏规则</h1>
+    </header>
+      <div class="guessrule-info">
+        <p>1、在指定区域押注金额，即可点击“大”、“小”或“豹子”摇骰子；</p>
+        <p>2、最低押注金额为100，且100-10000之间押注金额必须为100的整数倍，10000－100000之间押注金额为5000的整数倍，100000－500000之间押注金额为10000的整数倍，最大押注金额为500000。
+        </p>
+        <p>3、押注说明：</p>
+        <p style="color:#FFBC2B;">
+            小：三个骰子点数总和为4-10点<br>
+            大：三个骰子点数总和为11-17点<br>
+            豹子：三个骰子点数相同<br>
+            当筛盅结果为豹子，骰子点数总和不做计算，即此时只有押注豹子才算赢，“大”或“小”都算猜错。
+        </p>
+        <p>3、额外奖励：（连续暴击）</p>
+         <p style="color:#FFBC2B;">
+            连续猜中第4次时，奖励翻倍x4： 4-6次 <br>
+            连续猜中第7次及其以上时，奖励再翻倍x8： 7+ <br>
+            当猜中'豹子'且在连续暴击范围内，奖励更多
+        </p>
+      </div>
+  </div>
+	<div class="loading" id="mask"></div>
+	<script src="./vue.js"></script>
+	<script src="./main.js"></script>
+</body>
+</html>
