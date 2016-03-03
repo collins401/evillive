@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>文章详情</title>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/> 
+    <script>
+   !function(n){var e=n.document,t=e.documentElement,i=640,d=i/64,o="orientationchange"in n?"orientationchange":"resize",a=function(){var n=t.clientWidth<320? 320:t.clientWidth;n>640&&(n=640),t.style.fontSize=n/d+"px"};e.addEventListener&&(n.addEventListener(o,a,!1),e.addEventListener("DOMContentLoaded",a,!1))}(window);
+    </script>
+<style type="text/css">
+body{
+    margin:0;
+    font-size: 0.21875rem;
+    line-height: 1.5;
+    color:#5A5A5A;
+    background-color: #f9f9f9;
+}
+img{
+    border:0;
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+*,*:before,*:after{
+	box-sizing:border-box;
+}
+.clearfix:before,.clearfix:after{
+	display:table;
+	content:'';
+}
+.clearfix:after{
+	clear:both;
+}
+.d-left{float:left;}
+.d-container{
+    max-width: 10.0rem;
+    margin: 0 auto;
+    position: relative;
+}
+.d-banner{
+	
+}
+
+#mySwipe div img {
+  display:block;
+  width: 100%;
+}
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  height: 6.484375rem;
+  margin: 0 auto;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+  width:10rem;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+.d-header{
+	height:1.5625rem;
+	line-height:1.09375rem;
+	padding:0.234375rem 0.59375rem;
+	text-align: right;
+	background-repeat: repeat-x;
+    -webkit-background-size: 100% 1px;
+    background-size: 100% 1px;
+    background-position: left bottom; 
+    background-image:-webkit-gradient(linear, left top, left bottom, color-stop(.5, rgba(0, 0, 0, 0)), color-stop(.5, #D3D3D3), to(#D3D3D3));
+
+}
+.d-face{
+	width: 1.09375rem;	
+	height:1.09375rem;	
+	float:left;
+	border-radius:100%;
+	overflow: hidden;
+	background-position:center center;
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+.d-header-name{
+	font-size: 0.5rem;
+	margin-left: 0.3125rem;
+	color:#303030;
+}
+.d-header-date{
+	color:#B1B1B1;
+	font-size: 0.375rem;
+}
+.d-article-entry{
+	padding: 0.03125rem 0.59375rem;
+	font-size: 16px;
+}
+.d-article-entry h2,.d-article-entry h3,.d-article-entry h4,.d-article-entry h5,strong{
+	color:#303030;
+	font-weight: 600;
+}
+.d-article-entry table{
+	border-collapse: collapse;
+	width:100%;
+}
+.d-article-entry table td{
+	border:1px solid #eee;
+	background-color:#fff;
+	padding:2px;
+}
+.d-recommend{
+	position:relative;
+	margin: 10px 0;
+	height:2.1875rem;
+	background-color:#fff;
+	padding: 0.15625rem 0;
+	padding-right:0.9375rem;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.d-recommend:before{
+	content:"";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #C1C1C1;
+    -webkit-transform:scale(.5);
+    -webkit-transform-origin: 0 0;
+    padding: 1px;
+    -webkit-box-sizing: border-box;
+    border-radius: 8px;
+    pointer-events: none;
+}
+.d-recommend:after{
+	content:'';
+	display:block;
+	position:absolute;
+	border:2px solid #D4D4D4;
+	border-color:#D4D4D4 #D4D4D4 transparent transparent;
+	width:0.3125rem;
+	height:0.3125rem;
+	transform: rotate(45deg);
+	top:43%;
+}
+.d-thumb{
+	width:1.953125rem;
+	height:1.953125rem;
+	margin: 0 0.3125rem;
+}
+.d-img{
+	
+	float:left;
+}
+.d-bfc{
+	width:5.46875rem;
+	float:left;
+	height:1.875rem;
+	position: relative;
+}
+.d-bfc div{
+	position: absolute;
+	width:100%;
+	top:50%;
+	transform:translateY(-50%);
+}
+.d-bfc h3{
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color:#484848;
+	margin: 5px 0;
+}
+.d-bfc p{
+	font-size: 12px;
+	color:#A7A7A7;
+	margin: 0
+}
+</style>    
+</head>
+<body>
+	<div class="d-container">
+     	<div id='mySwipe' class='swipe'>
+		  <div class='swipe-wrap' id="SwipeWrap">
+		    <div><img src="./images/banner1.png" alt=""></div>
+		    <div><img src="./images/banner2.png" alt=""></div>
+		    <div><img src="./images/banner3.png" alt=""></div>
+		    <div><img src="./images/banner4.png" alt=""></div>
+		  </div>
+		  <div class="dot" id="dot">
+		    <span class="cur"></span>
+		    <span></span>
+		    <span></span>
+		    <span></span>
+		  </div>
+		</div> 
+		<!-- banner end -->
+		<div class="d-header clearfix">
+			<div class="d-left">
+				<div class="d-face" style="background-image: url(./images/face.png);"></div>
+				<span class="d-header-name">阿里巴巴</span>
+			</div>
+			<span class="d-header-date">2016-10-11</span>
+		</div>
+		<div class="d-article-entry">
+			<!-- 正文开始 -->
+			<p>现在很多人都没有戴表的习惯，看时间的时候会习惯性的拿起手机。其实手表是非常重要的，尤其对于职场男士来说，手表是生活品味和地位的象征，一款好的手表，简直是职场成功人士的腕间利器。</p>
+			<h3>这里是h3标题一</h3>
+			<div class="d-recommend clearfix">
+				<div class="d-img">
+					<img class="d-thumb" src="images/r.png" alt="">
+				</div>
+				<div class="d-bfc">
+					<div>
+					<h3>Bergmann·1933包豪斯情侣1933包豪斯情侣1933包豪斯情侣</h3>
+					<p>韩国乐天官网供货</p>
+					</div>
+				</div>
+			</div>
+			<table>
+				<tr>
+					<td>asdas</td><td>asdas</td>
+				</tr>
+				<tr>
+					<td>asdas</td><td>asdas</td>
+				</tr>
+				<tr>
+					<td>asdas</td><td>asdas</td>
+				</tr>
+			</table>
+			<ul>
+				<li>无序列表无序列表</li>
+				<li>无序列表无序列表</li>
+			</ul>
+			<ol>
+				<li>有序列表有序列表</li>
+				<li>有序列表有序列表</li>
+			</ol>
+			<img src="images/banner1.png" alt="">
+			<h3>Bergmann·1933包豪斯情侣手表</h3>
+			<p>贝格曼（Bergmann）是德国知名腕表品牌。这款表是典型的德国包豪斯风格，简约不简单的款式，简洁的弧形表面，不夸张华丽，却尽显沉着和经典。</p>
+			<h3>May28th·男女同款腕表</h3>
+			<p>May28th是美国时尚手表品牌，崇尚率性张扬的个性，表盘都极具设计感，是备受欧美年轻人追捧的潮流品牌。这款表的颜色非常清新个性，几何图案的多重组合，具有防水功能，男女同款，送给他或她都很合适。</p>
+			<!-- 正文结束 -->
+		</div>
+    </div>
+ <script src='./js/swipe.min.js'></script>
+<script>
+
+// pure JS
+var elem = document.getElementById('mySwipe');
+var dot = document.getElementById('dot').getElementsByTagName('span');
+// query
+window.mySwipe = Swipe(elem, {
+  // startSlide: 4,
+  auto: 3000,
+  // continuous: true,
+  // disableScroll: true,
+  // stopPropagation: true,
+  callback: function(index, element) {
+      var i = dot.length;
+    while (i--) {
+      dot[i].className = '';
+    }
+    dot[index].className = 'cur';
+
+  }
+});
+
+// with jQuery
+// window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
+
+</script>
+</body>
+</html>
