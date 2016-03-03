@@ -8,8 +8,9 @@
     <meta content="telephone=no,email=no" name="format-detection">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/> 
     <script>
-   !function(n){var e=n.document,t=e.documentElement,i=640,d=i/64,o="orientationchange"in n?"orientationchange":"resize",a=function(){var n=t.clientWidth<320? 320:t.clientWidth;n>640&&(n=640),t.style.fontSize=n/d+"px"};e.addEventListener&&(n.addEventListener(o,a,!1),e.addEventListener("DOMContentLoaded",a,!1))}(window);
+!function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+"px",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name="viewport"]'),h=e.querySelector('meta[name="flexible"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){console.warn("将根据已有的meta标签来设置缩放比例");var l=g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else if(h){var m=h.getAttribute("content");if(m){var n=m.match(/initial\-dpr=([\d\.]+)/),o=m.match(/maximum\-dpr=([\d\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}if(!i&&!j){var p=(a.navigator.appVersion.match(/android/gi),a.navigator.appVersion.match(/iphone/gi)),q=a.devicePixelRatio;i=p?q>=3&&(!i||i>=3)?3:q>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute("data-dpr",i),!g)if(g=e.createElement("meta"),g.setAttribute("name","viewport"),g.setAttribute("content","initial-scale="+j+", maximum-scale="+j+", minimum-scale="+j+", user-scalable=no"),f.firstElementChild)f.firstElementChild.appendChild(g);else{var r=e.createElement("div");r.appendChild(g),e.write(r.innerHTML)}a.addEventListener("resize",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),"complete"===e.readyState?e.body.style.fontSize=12*i+"px":e.addEventListener("DOMContentLoaded",function(){e.body.style.fontSize=12*i+"px"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return"string"==typeof a&&a.match(/rem$/)&&(b+="px"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;return"string"==typeof a&&a.match(/px$/)&&(b+="rem"),b}}(window,window.lib||(window.lib={}));
     </script>
+     <script src='./js/swipe.js'></script>
 <style type="text/css">
 body{
     margin:0;
@@ -48,7 +49,8 @@ a{
 
 #mySwipe div img {
   display:block;
-  width: 100%;
+  width: 10rem;
+  height:6.5rem;
 }
 .swipe {
   overflow: hidden;
@@ -66,6 +68,22 @@ a{
   float:left;
   width:100%;
   position: relative;
+}
+.dot{
+	position: absolute;
+	bottom:10px;
+	text-align: center;
+	width:100%;
+}
+.dot span{
+	width:8px;
+	height:8px;
+	background-color:rgba(0, 0, 0, 0.1);
+	display:inline-block;
+	border-radius:100%;
+}
+.dot span.cur{
+	background-color:rgba(0, 0, 0, 0.3);
 }
 .d-header{
 	height:1.5625rem;
@@ -121,8 +139,6 @@ a{
 	margin: 10px 0;
 	height:2.1875rem;
 	background-color:#fff;
-	padding: 0.15625rem 0;
-	padding-right:0.9375rem;
 	display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -158,7 +174,7 @@ a{
 .d-thumb{
 	width:1.953125rem;
 	height:1.953125rem;
-	margin: 0 0.3125rem;
+	margin: 0.15625rem  0.3125rem;
 }
 .d-img{
 	
@@ -194,7 +210,7 @@ a{
 <body>
 	<div class="d-container">
      	<div id='mySwipe' class='swipe'>
-		  <div class='swipe-wrap' id="SwipeWrap">
+		  <div class='swipe-wrap' id="SwipeWrap" style="width: 10rem !important">
 		    <div><img src="./images/banner1.png" alt=""></div>
 		    <div><img src="./images/banner2.png" alt=""></div>
 		    <div><img src="./images/banner3.png" alt=""></div>
@@ -257,7 +273,7 @@ a{
 			<!-- 正文结束 -->
 		</div>
     </div>
- <script src='./js/swipe.min.js'></script>
+
 <script>
 
 // pure JS
