@@ -42,6 +42,44 @@ a{
     margin: 0 auto;
     position: relative;
 }
+#mySwipe div img {
+  display:block;
+  width: 10rem;
+  height:6.5rem;
+}
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  height: 6.484375rem;
+  margin: 0 auto;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+  width:10rem;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+.dot{
+	position: absolute;
+	bottom:10px;
+	text-align: center;
+	width:100%;
+}
+.dot span{
+	width:8px;
+	height:8px;
+	background-color:rgba(0, 0, 0, 0.1);
+	display:inline-block;
+	border-radius:100%;
+}
+.dot span.cur{
+	background-color:rgba(0, 0, 0, 0.3);
+}
 .d-header{
 	height:1.5625rem;
 	line-height:1.09375rem;
@@ -73,31 +111,6 @@ a{
 .d-header-date{
 	color:#B1B1B1;
 	font-size: 0.375rem;
-}
-.d-banner{
-	height:6.5rem;
-	overflow: hidden;
-	position: relative;
-	background-position:center center;
-	background-repeat:no-repeat;
-	-webkit-background-size:cover;
-	background-size:cover;
-}
-.d-banner h3{
-	position:absolute;
-	width:100%;
-	bottom:0;
-	line-height:1.5625rem;
-	font-size: 0.5625rem;
-	font-weight: normal;
-	margin:0;
-	overflow: hidden;
-	text-overflow:ellipsis;
-	white-space: nowrap;
-	color:#fff;
-	text-align: center;
-	background: -webkit-linear-gradient(transparent,rgba(0,0,0,0.2));
-    background: linear-gradient(transparent,rgba(0,0,0,0.2));
 }
 .d-article-entry{
 	padding: 0.03125rem 0.59375rem;
@@ -192,8 +205,19 @@ a{
 </head>
 <body>
 	<div class="d-container">
-		<div class="d-banner" style="background-image: url(images/banner1.png);">
-			<h3>表里如一，海淘大牌手表如何挑？</h3>
+		<div id='mySwipe' class='swipe'>
+		  <div class='swipe-wrap' id="SwipeWrap" style="width: 10rem !important">
+		    <div><img src="./images/banner1.png" alt=""></div>
+		    <div><img src="./images/banner2.png" alt=""></div>
+		    <div><img src="./images/banner3.png" alt=""></div>
+		    <div><img src="./images/banner4.png" alt=""></div>
+		  </div>
+		  <div class="dot" id="dot">
+		    <span class="cur"></span>
+		    <span></span>
+		    <span></span>
+		    <span></span>
+		  </div>
 		</div>
 		<!-- banner end -->
 		<div class="d-header clearfix">
@@ -247,6 +271,26 @@ a{
 			<!-- 正文结束 -->
 		</div>
     </div>
+<script src='./js/swipe.min.js'></script>
+<script>
+var elem = document.getElementById('mySwipe');
+var dot = document.getElementById('dot').getElementsByTagName('span');
+window.mySwipe = Swipe(elem, {
+  // startSlide: 4,
+  auto: 3000,
+  // continuous: true,
+  // disableScroll: true,
+  // stopPropagation: true,
+  callback: function(index, element) {
+      var i = dot.length;
+    while (i--) {
+      dot[i].className = '';
+    }
+    dot[index].className = 'cur';
+
+  }
+});
+
 </script>
 </body>
 </html>
