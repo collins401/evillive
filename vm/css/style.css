@@ -57,7 +57,6 @@ h2,h3,h4,h5{color:#222;font-weight: 500;}
 .header{
     height: 105px;
     border-bottom: 5px solid #000;
-    transition:all .2s linear;
 }
 .index-header{
   position: fixed;
@@ -141,7 +140,7 @@ input[type=checkbox] {
 .bot-info{line-height: 2;}
 /* index page */
 #section0{
-  background: url(../images/banner-1.jpg) no-repeat center 105px;
+  background: url(../images/banner-1.jpg) no-repeat center 75px;
   -webkit-background-size: auto 100%;
   background-size: auto 100%;
 }
@@ -213,18 +212,26 @@ input[type=checkbox] {
 .section-txt h3{font-size: 24px;margin-top: 20px;}
 .section-txt p{color:#afafaf;font-family: webfont;opacity: 0;}
 .iphone.left{
+  -webkit-transform: translateX(-15%);
   transform: translateX(-15%);
   opacity: 0;
+  text-align: right;
+}
+.iphone.left img{
+  margin-right: 30px;
 }
 .section.fp-completely .iphone.left{
+  -webkit-transform: translateX(0);
   transform: translateX(0);
   opacity: 1
 }
 .iphone.right{
+  -webkit-transform: translateX(15%);
   transform: translateX(15%);
   opacity: 0;
 }
 .section.fp-completely .iphone.right{
+  -webkit-transform: translateX(0);
   transform: translateX(0);
   opacity: 1
 }
@@ -450,5 +457,18 @@ ul.job-list li.half{
   }
   .footer .fr .ta-r{
     text-align: left;
+  }
+  .header{
+    height: 80px;
+  }
+  .logo{
+    margin-top: 22px;
+  }
+  .label{
+    top:30px;
+  }
+  .logo h1{
+    width: 200px;
+    height: 38px;
   }
 }
