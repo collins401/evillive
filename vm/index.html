@@ -39,6 +39,16 @@
   <div id="fullpage">
     <div class="section " id="section0">
       <div class="container">
+        <div class="title-bt">
+          <div class="bt-en">
+            <img src="./images/bt-1.png" alt="">
+          </div>
+          <div class="bt-2">
+            <img src="./images/bt-2.png" alt="">
+          </div>
+          <div class="bt-3"><img src="./images/bt-3.png" alt=""></div>
+
+        </div>
         <div class="app clearfix">
           <img src="./images/app.png" alt="" class="fl">
           <div class="bfc app-download">
@@ -140,7 +150,9 @@
               console.log(anchorLink + '----' + index)
             //section 2
             if(index == 1){
-
+              $('#section0 .bt-2').delay(500).animate({opacity: 1,transform: 'translateY(40px)'},300);
+              $('#section0 .bt-3').delay(800).animate({opacity: 1,transform: 'translateY(40px)'},300);
+              $('#section0 .bt-en').delay(200).animate({opacity: 1},300);
               $('.section .section-txt h2').css({opacity: 0});
               $('.section .section-txt h3').css({opacity: 0});
               $('.section .section-txt p').css({opacity: 0});
