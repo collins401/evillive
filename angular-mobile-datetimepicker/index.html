@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script src="angular.min.js"></script>
+	<script src="src/angular-pickadate.js"></script>
+	<script src="angular-locale_zh-cn.js"></script>
+	<script src="angular-animate.js"></script>
+
+	<link rel="stylesheet" href="src/angular-pickadate.css">
+	<style>
+		body{
+			margin: 0;
+		}
+		*,*:before,*:after{
+			box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    -webkit-box-sizing: border-box;
+		}
+	</style>
+</head>
+<body ng-controller="demoCtrl">
+	<!-- <div pickadate ng-model="date"></div> -->
+
+	<input type="text" pickadate ng-model="date1" format="yyyy/MM/dd" max-date="maxDate1" min-date="minDate1" > <br>	<br>	<br>	<br>
+	<input type="text" pickadate ng-model="date2" format="yyyy/MM/dd" max-date="maxDate2" min-date="minDate2">
+
+	<script type="text/javascript">
+
+		var app = angular.module("myApp",['pickadate','ngAnimate']);
+		app.controller("demoCtrl", function ($scope,$filter) {
+				var day = new Date();
+				var today = $filter('date')(day,'yyyy/MM/dd');
+				var lastMonth = day.getFullYear() +'/'+ day.getMonth() +'/'+ day.getDate();
+				$scope.maxDate1 = today;
+				$scope.maxDate2 = today;
+				$scope.firstChoose = null;
+				$scope.$watch('date1',function() {
+						if($scope.date1){
+							var flagDatetime = new Date($scope.date1);
+							var flagMax = flagDatetime.getFullYear() +'/'+ parseInt(flagDatetime.getMonth()+2) + '/' + flagDatetime.getDate();
+							flagMax = Date.parse(flagMax) > Date.parse(day) ? today : flagMax;
+							$scope.minDate2 = $scope.date1;
+							$scope.maxDate2 = flagMax;
+						}
+				})
+				$scope.$watch('date2',function() {
+					if($scope.date2) {
+						var flagDatetime2 = new Date($scope.date2);
+						var flagMin = flagDatetime2.getFullYear() +'/'+ flagDatetime2.getMonth() + '/' + flagDatetime2.getDate();
+						$scope.minDate1 = flagMin;
+						$scope.maxDate1 = $scope.date2;
+					}
+				})
+
+		})
+	</script>
+</body>
+</html>
