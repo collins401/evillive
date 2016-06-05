@@ -13,6 +13,7 @@
 	<style>
 		body{
 			margin: 0;
+			font-size: 14px;
 		}
 		*,*:before,*:after{
 			box-sizing: border-box;
@@ -34,10 +35,19 @@
 </head>
 <body ng-controller="demoCtrl">
 	<!-- <div pickadate ng-model="date"></div> -->
-<br><br>
-数据1：	<input type="text" pickadate ng-model="date1" format="yyyy/MM/dd" max-date="maxDate1" min-date="minDate1" readonly="true" > <br>	<br>	<br>	<br>
-数据2：	<input type="text" pickadate ng-model="date2" format="yyyy/MM/dd" max-date="maxDate2" min-date="minDate2" readonly="true">
-
+<h3>一个月以内的时间范围</h3>
+<hr>
+开始：	<input type="text" pickadate ng-model="date1" default-date="presetDate" format="yyyy/MM/dd" max-date="maxDate1" min-date="minDate1" readonly="true" > <br>
+结束：	<input type="text" pickadate ng-model="date2" format="yyyy/MM/dd" max-date="maxDate2" min-date="minDate2" readonly="true">
+<h3>禁选周六</h3>
+<hr>	
+<input type="text" pickadate ng-model="date4" format="yyyy-MM-dd" disabled-dates="disabledDatesFn(date)" readonly="true">
+<h3>周一起始位置</h3>
+<hr>	
+<input type="text" pickadate ng-model="date4" format="yyyy-MM-dd" week-starts-on="1" readonly="true">
+<h3>不固定行数</h3>
+<hr>	
+<input type="text" pickadate ng-model="date4" format="yyyy-MM-dd" no-extra-rows readonly="true">
 	<script type="text/javascript">
 
 		var app = angular.module("myApp",['pickadate','ngAnimate']);
@@ -45,6 +55,7 @@
 				var day = new Date();
 				var today = $filter('date')(day,'yyyy/MM/dd');
 				var lastMonth = day.getFullYear() +'/'+ day.getMonth() +'/'+ day.getDate();
+				$scope.presetDate = lastMonth;
 				$scope.maxDate1 = today;
 				$scope.maxDate2 = today;
 				$scope.firstChoose = null;
@@ -65,7 +76,10 @@
 						$scope.maxDate1 = $scope.date2;
 					}
 				})
-
+			
+			    $scope.disabledDatesFn = function(date) {
+			        return date.getDay() === 6; // Disable every Sunday
+			    }
 		})
 	</script>
 </body>

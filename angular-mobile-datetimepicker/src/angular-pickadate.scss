@@ -87,7 +87,7 @@
     cursor: pointer;
     color: #666666;
   }
-  .pickadate-today:before,.pickadate-active:before {
+  .pickadate-today:before,.pickadate-active:before,.pickadate-unavailable:before {
     width: 22px;
     height: 22px;
     position: absolute;
@@ -99,6 +99,9 @@
     -webkit-border-radius: 11px;
     border-radius: 11px;
 
+  }
+  .pickadate-unavailable:before{
+    background-color: rgba(0,0,0,.3);
   }
   .pickadate-today:before{
     background-color: rgba(234,234,234,.4);

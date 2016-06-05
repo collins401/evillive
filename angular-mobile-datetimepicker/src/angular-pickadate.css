@@ -73,7 +73,7 @@
   .pickadate-cell .pickadate-enabled {
     cursor: pointer;
     color: #666666; }
-  .pickadate-cell .pickadate-today:before, .pickadate-cell .pickadate-active:before {
+  .pickadate-cell .pickadate-today:before, .pickadate-cell .pickadate-active:before, .pickadate-cell .pickadate-unavailable:before {
     width: 22px;
     height: 22px;
     position: absolute;
@@ -84,6 +84,8 @@
     margin-left: -11px;
     -webkit-border-radius: 11px;
     border-radius: 11px; }
+  .pickadate-cell .pickadate-unavailable:before {
+    background-color: rgba(0, 0, 0, 0.3); }
   .pickadate-cell .pickadate-today:before {
     background-color: rgba(234, 234, 234, 0.4); }
   .pickadate-cell .pickadate-active:before {
