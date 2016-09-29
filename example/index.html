@@ -53,7 +53,23 @@
     </swipe-item>
   </swipe>
   <br>
-
+<br>
+  <swipe class="my-swipe" :show-indicators="false" :auto="0">
+    <swipe-item class="slide1">Slide1</swipe-item>
+    <swipe-item class="slide2">
+      <div class="panel">Slide2</div>
+    </swipe-item>
+    <swipe-item class="slide3">Slide3</swipe-item>
+  </swipe>
+  <br>
+   <swipe class="my-swipe" :show-indicators="false" :auto="0">
+    <swipe-item class="slide1">Slide1</swipe-item>
+    <swipe-item class="slide2">Slide2</swipe-item>
+    <swipe-item class="slide3">
+       <div class="panel">Slide2</div>
+    </swipe-item>
+  </swipe>
+  <br>
   <script src="./vue.js"></script>
   <script src="./vue-swipe.js"></script>
   <script src="./index.js"></script>
