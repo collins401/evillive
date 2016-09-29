@@ -31,9 +31,14 @@
 		   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
 		}
+		.lll{
+			position: relative;
+			width: 300px;
+		}
 	</style>
 </head>
 <body ng-controller="demoCtrl">
+<div class="lll">
 	<!-- <div pickadate ng-model="date"></div> -->
 <h3>一个月以内的时间范围</h3>
 <hr>
@@ -41,13 +46,14 @@
 结束：	<input type="text" pickadate ng-model="date2" format="yyyy/MM/dd" max-date="maxDate2" min-date="minDate2" readonly="true">
 <h3>禁选周六</h3>
 <hr>	
-<input type="text" pickadate ng-model="date4" format="yyyy-MM-dd" disabled-dates="disabledDatesFn(date)" readonly="true">
+<input type="text" pickadate ng-model="date3" format="yyyy-MM-dd" disabled-dates="disabledDatesFn(date)" readonly="true">
 <h3>周一起始位置</h3>
 <hr>	
 <input type="text" pickadate ng-model="date4" format="yyyy-MM-dd" week-starts-on="1" readonly="true">
 <h3>不固定行数</h3>
 <hr>	
-<input type="text" pickadate ng-model="date4" format="yyyy-MM-dd" no-extra-rows readonly="true">
+<input type="text" pickadate ng-model="date5" format="yyyy/MM/dd" multiple readonly="true">
+</div>
 	<script type="text/javascript">
 
 		var app = angular.module("myApp",['pickadate','ngAnimate']);

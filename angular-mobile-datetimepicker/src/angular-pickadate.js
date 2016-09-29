@@ -111,7 +111,7 @@
             var formatRegex = '(dd|MM|yyyy)',
                 separator   = format.match(/[-|/]/)[0],
                 dateParts   = dateString.split(separator),
-                regexp      = new RegExp([formatRegex, formatRegex, formatRegex].join(separator)),
+                regexp      = new RegExp([formatRegex].join(separator)),
                 formatParts = format.match(regexp),
                 dateObj     = {};
 
@@ -341,8 +341,9 @@
             scope.$$postDigest(function() {
               if (attrs.value) { ngModel.$viewValue = attrs.value; $render(); }
             });
-
+console.log(element)
             element.after(compiledHtml.addClass('pickadate-modal'));
+
           } else {
             element.append(compiledHtml);
           }

@@ -5,18 +5,6 @@
     color: #009949;
     text-decoration: none; }
 
-.pickadate.ng-hide-remove .pickadate-container,
-.pickadate.ng-hide-add.ng-hide-add-active .pickadate-container {
-  -webkit-transform: translateY(-20px);
-  transform: translateY(-20px);
-  opacity: 0; }
-
-.pickadate.ng-hide-add .pickadate-container,
-.pickadate.ng-hide-remove.ng-hide-remove-active .pickadate-container {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  opacity: 1; }
-
 .pickadate-mask {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;

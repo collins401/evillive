@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui, maximum-scale=1.0, minimum-scale=1.0">
+  <title>vue-swipe examples</title>
+  <link rel="stylesheet" href="./vue-swipe.css" charset="utf-8">
+  <style>
+    .my-swipe {
+      height: 200px;
+      color: #fff;
+      font-size: 30px;
+      text-align: center;
+    }
+    .slide1 {
+      background-color: #0089dc;
+      color: #fff;
+    }
+    .slide2 {
+      background-color: #ffd705;
+      color: #000;
+    }
+    .slide3 {
+      background-color: #ff2d4b;
+      color: #fff;
+    }
+    .panel{
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <swipe class="my-swipe" >
+    <swipe-item class="slide1">Slide1</swipe-item>
+    <swipe-item class="slide2">Slide2</swipe-item>
+    <swipe-item class="slide3">Slide3</swipe-item>
+  </swipe>
+  <br>
+  <swipe class="my-swipe" :show-indicators="false" :auto="0">
+    <swipe-item class="slide1">Slide1</swipe-item>
+    <swipe-item class="slide2">
+      <div class="panel">Slide2</div>
+    </swipe-item>
+    <swipe-item class="slide3">Slide3</swipe-item>
+  </swipe>
+  <br>
+   <swipe class="my-swipe" :show-indicators="false" :auto="0">
+    <swipe-item class="slide1">Slide1</swipe-item>
+    <swipe-item class="slide2">Slide2</swipe-item>
+    <swipe-item class="slide3">
+       <div class="panel">Slide2</div>
+    </swipe-item>
+  </swipe>
+  <br>
+
+  <script src="./vue.js"></script>
+  <script src="./vue-swipe.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>
