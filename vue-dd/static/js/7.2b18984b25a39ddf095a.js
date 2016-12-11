@@ -1,0 +1,2 @@
+webpackJsonp([7,9],{132:function(e,t,n){var r,o,s=n(137);o=r=r||{},"object"!=typeof r.default&&"function"!=typeof r.default||(o=r=r.default),"function"==typeof o&&(o=o.options),o.render=s.render,o.staticRenderFns=s.staticRenderFns,e.exports=r},137:function(e,t){e.exports={render:function(){var e=this,t=e.$createElement;return t("div",[t("h1",["setting"])," ",t("router-link",{staticClass:"color-white",attrs:{to:{name:"userhome"}}},["to userhome"])])},staticRenderFns:[]}}});
+//# sourceMappingURL=7.2b18984b25a39ddf095a.js.map
