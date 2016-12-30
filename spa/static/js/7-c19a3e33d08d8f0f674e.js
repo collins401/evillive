@@ -1,0 +1,2 @@
+webpackJsonp([7,8],{137:function(t,e,n){var r,o,s=n(140);o=r=r||{},"object"!=typeof r.default&&"function"!=typeof r.default||(o=r=r.default),"function"==typeof o&&(o=o.options),o.render=s.render,o.staticRenderFns=s.staticRenderFns,t.exports=r},140:function(t,e){t.exports={render:function(){var t=this;return t._h("div",["\n\tsetting\n\t",t._h("br")," ",t._h("router-link",{attrs:{to:{name:"userhome"}}},["to setting"])])},staticRenderFns:[]}}});
+//# sourceMappingURL=7-c19a3e33d08d8f0f674e.js.map
