@@ -444,7 +444,25 @@
     /* demo ten */
     .tail-spin{
         width: 40px;height: 40px;
-        border-right: 3px solid #fff;
+       
+        position: relative;
+
+    }
+    .tail-spin:before{
+        border:3px solid #577c65;
+        width: 37px;height: 37px;
+        position: absolute;
+        content: '';
+        left:0;top:0;
+        border-radius: 100%;
+    }
+    .tail-spin:after{
+        width: 40px;height: 40px;
+        position: absolute;
+        content: '';
+        left:0;top:0;
+        border-radius: 100%;
+        border-right: 3px solid #15b561;
         border-bottom: 3px solid transparent;
         border-radius: 100%;
         animation: tail-spin 0.8s linear infinite;
